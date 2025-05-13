@@ -20,27 +20,29 @@
       box-sizing: border-box;
     }
 
-    body, html {
+    html, body {
       font-family: 'Inter', sans-serif;
       background: linear-gradient(135deg, #6CBA7B 0%, #4695D1 50%, #0f1c2e 100%);
       background-attachment: fixed;
       background-size: cover;
       color: var(--text-bright);
-      overflow-x: hidden;
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     .section {
-      height: 100vh;
-      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 5rem 2rem;
+      text-align: center;
       max-width: 1000px;
       margin: auto;
-      text-align: center;
+    }
+
+    .scroll-full {
+      min-height: 100vh;
     }
 
     header {
@@ -129,16 +131,13 @@
     }
 
     .footer-section {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+      padding: 4rem 2rem;
       background: rgba(16, 29, 44, 0.8);
-      padding: 2rem;
+      text-align: center;
     }
 
-    .footer-section p, .footer-section a {
+    .footer-section p,
+    .footer-section a {
       font-size: 0.9rem;
       color: var(--text-muted);
     }
@@ -189,6 +188,11 @@
         margin-top: 2rem;
       }
 
+      .features {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
       .nav-dots {
         right: 1rem;
       }
@@ -207,7 +211,7 @@
     <a href="#s4" class="dot"></a>
   </div>
 
-  <div id="s1" class="section">
+  <section id="s1" class="section scroll-full">
     <h2>LAUNCH IN PROGRESS</h2>
     <p>
       A patented global solution — <strong>Epiflow.ai</strong> is launching soon to power the next generation of 
@@ -216,16 +220,16 @@
     <div class="progress"><div class="progress-fill"></div></div>
     <p style="font-size: 0.9rem;">74% Completed</p>
     <a href="mailto:info@epiflow.ai" class="btn">Let's Connect!</a>
-  </div>
+  </section>
 
-  <div id="s2" class="section">
+  <section id="s2" class="section scroll-full">
     <h2>Our Vision</h2>
     <p>
       Epiflow is <strong>revolutionizing public health intelligence</strong> from <strong>Masdar City, Abu Dhabi</strong>. We deliver <strong>real-time, AI-powered surveillance</strong> for governments to <strong>detect and stop threats before outbreaks</strong> begin. Our vision is a future where <strong>early insight saves lives</strong>.
     </p>
-  </div>
+  </section>
 
-  <div id="s3" class="section">
+  <section id="s3" class="section" style="padding-bottom: 6rem;">
     <h2>What We Deliver</h2>
     <div class="features">
       <div class="feature-box">
@@ -249,18 +253,16 @@
         <p>Non-invasive and privacy-compliant — no testing lines, no personal data collected.</p>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div id="s4" class="footer-section">
-    <div>
-      <p>📍 Masdar City, Abu Dhabi &nbsp; | &nbsp; 📩 <a href="mailto:info@epiflow.ai">info@epiflow.ai</a></p>
-      <p>© 2025 Epiflow LLC. All Rights Reserved.</p>
-    </div>
-  </div>
+  <section id="s4" class="footer-section">
+    <p>📍 Masdar City, Abu Dhabi &nbsp; | &nbsp; 📩 <a href="mailto:info@epiflow.ai">info@epiflow.ai</a></p>
+    <p>© 2025 Epiflow LLC. All Rights Reserved.</p>
+  </section>
 
   <script>
     const dots = document.querySelectorAll('.dot');
-    const sections = document.querySelectorAll('.section, .footer-section');
+    const sections = document.querySelectorAll('section');
 
     window.addEventListener('scroll', () => {
       let current = '';
