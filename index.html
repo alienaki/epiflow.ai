@@ -31,7 +31,8 @@
     }
 
     .section {
-      min-height: 100vh;
+      height: 100vh;
+      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -73,7 +74,7 @@
 
     .progress {
       width: 300px;
-      margin: 2rem auto 1.5rem;
+      margin: 2rem auto 1rem;
       background: rgba(255, 255, 255, 0.3);
       border-radius: 20px;
       overflow: hidden;
@@ -124,15 +125,22 @@
       text-decoration: none;
       border-radius: 30px;
       font-weight: 600;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
 
-    footer {
-      padding: 2rem;
+    .footer-section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      background: rgba(16, 29, 44, 0.8);
+      padding: 2rem;
+    }
+
+    .footer-section p, .footer-section a {
       font-size: 0.9rem;
       color: var(--text-muted);
-      background: rgba(16, 29, 44, 0.8);
     }
 
     a {
@@ -178,7 +186,7 @@
       }
 
       .btn {
-        margin-top: 1.5rem;
+        margin-top: 2rem;
       }
 
       .nav-dots {
@@ -206,7 +214,7 @@
       <strong>national pandemic resilience</strong>. Join the movement that brings <strong>health security to the frontlines</strong>.
     </p>
     <div class="progress"><div class="progress-fill"></div></div>
-    <p style="font-size: 0.9rem; margin-top: 0.5rem;">74% Completed</p>
+    <p style="font-size: 0.9rem;">74% Completed</p>
     <a href="mailto:info@epiflow.ai" class="btn">Let's Connect!</a>
   </div>
 
@@ -243,16 +251,16 @@
     </div>
   </div>
 
-  <div id="s4" class="section" style="min-height: auto;">
-    <footer>
-      📍 Masdar City, Abu Dhabi &nbsp; | &nbsp; 📩 <a href="mailto:info@epiflow.ai">info@epiflow.ai</a><br/>
-      © 2025 Epiflow LLC. All Rights Reserved.
-    </footer>
+  <div id="s4" class="footer-section">
+    <div>
+      <p>📍 Masdar City, Abu Dhabi &nbsp; | &nbsp; 📩 <a href="mailto:info@epiflow.ai">info@epiflow.ai</a></p>
+      <p>© 2025 Epiflow LLC. All Rights Reserved.</p>
+    </div>
   </div>
 
   <script>
     const dots = document.querySelectorAll('.dot');
-    const sections = document.querySelectorAll('.section');
+    const sections = document.querySelectorAll('.section, .footer-section');
 
     window.addEventListener('scroll', () => {
       let current = '';
